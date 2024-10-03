@@ -8,7 +8,7 @@ const LeftChild = () => {
     <>
       <h2 className={styles.textHeader}>Create an new account</h2>
       <p className={styles.textSubHeader}>
-        It's easy! Just take a minute to provide the details.
+        It&apos;s easy! Just take a minute to provide the details.
       </p>
       <form>
         <div className={styles.form}>
