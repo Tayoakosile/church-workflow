@@ -1,113 +1,155 @@
+"use client";
 import Image from "next/image";
+import styles from "./styles.module.css";
 
-export default function Home() {
+const SignUpPage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <div className={styles.container}>
+      <div className={styles.textSection}>
+        <h2 className={styles.textHeader}>Create an new account</h2>
+        <p className={styles.textSubHeader}>
+          It's easy! Just take a minute to provide the details.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+        <form>
+          <div className={styles.form}>
+            <div className={styles.halfField}>
+              <label htmlFor="firstName" className={styles.label}>
+                First Name
+              </label>
+              <input
+                className={styles.halfInput}
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+            <div className={styles.halfField}>
+              <label htmlFor="lastName" className={styles.label}>
+                Last Name
+              </label>
+              <input
+                className={styles.halfInput}
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter your last name"
+                required
+              />
+            </div>
+          </div>
+
+          <div className={styles.form}>
+            <label htmlFor="email" className={styles.label}>
+              Email Address
+            </label>
+
+            <input
+              className={styles.input}
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
             />
-          </a>
-        </div>
-      </div>
+          </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+          <div className={styles.form}>
+            <label htmlFor="password" className={styles.label}>
+              Password
+            </label>
+            <div className={styles.passwordContainer}>
+              <input
+                className={styles.input}
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <span className={styles.eyeIcon}>
+                <Image
+                  className={styles.eyeIconImg}
+                  src="/images/eye-logo.png" // Paths to your eye icons
+                  alt="eye logo"
+                  width={20}
+                  height={20}
+                />
+              </span>
+            </div>
+          </div>
+
+          <div className={styles.form}>
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              className={styles.checkbox}
+              required
+            />
+            <label htmlFor="terms">
+              I agree to the{" "}
+              <span className={styles.checkboxSpan}>Terms and Conditions</span>
+            </label>
+          </div>
+          <div className={styles.form}>
+            <button type="submit" className={styles.submitButton}>
+              Continue
+            </button>
+          </div>
+
+          <div className={styles.divider}>
+            <hr />
+            <span>or</span>
+            <hr />
+          </div>
+
+          <div className={styles.form}>
+            <button type="button" className={styles.googleButton}>
+              <Image
+                src="/images/google.png" // Path to your Google logo
+                alt="Google Logo"
+                width={20}
+                height={20}
+                className={styles.googleLogo}
+              />
+              Continue with Google
+            </button>
+          </div>
+
+          <div className={styles.footer}>
+            <p className={styles.footerText}>
+              {" "}
+              Already have an account? {""}{" "}
+              <span className={styles.footerSpan}>
+                <a href="/signin">Sign In</a>
+              </span>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div className={styles.imageSection}>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/images/church-frame.png" // Replace with your church image path
+          alt="Church Congregation"
+          width={1000}
+          height={500}
+          className={styles.image}
         />
+        {/* <div className={styles.bibleVerseCard}>
+          <p className="">
+            “For I know the plans I have for you, declares the Lord, plans for
+            welfare and not for evil, to give you a future and a hope. Then you
+            will call upon me and come and pray to me, and I will hear you. You
+            will seek me and find me, when you seek me with all your heart.”
+          </p>
+          <p>Jeremiah 29:11-13</p>
+        </div>
+        <div className={styles.blurEffect}></div> */}
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default SignUpPage;
