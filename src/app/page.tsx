@@ -4,8 +4,10 @@ import styles from "./styles.module.css";
 
 const SignUpPage = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.textSection}>
+    <ul className="flex w-full justify-between h-[100vh] overflow-y-clip p-2.5 space-x-[7.9375rem]">
+      {/* // <ul className={styles.container}> */}
+
+      <li className={`${styles.textSection} pl-[7.5rem] pt-[12.125rem]`}>
         <h2 className={styles.textHeader}>Create an new account</h2>
         <p className={styles.textSubHeader}>
           It's easy! Just take a minute to provide the details.
@@ -128,14 +130,15 @@ const SignUpPage = () => {
             </p>
           </div>
         </form>
-      </div>
-      <div className={styles.imageSection}>
+      </li>
+
+      <li className="h-full">
         <Image
           src="/images/church-frame.png" // Replace with your church image path
           alt="Church Congregation"
           width={1000}
-          height={500}
-          className={styles.image}
+          height={100}
+          className="h-[100%] object-fill"
         />
         {/* <div className={styles.bibleVerseCard}>
           <p className="">
@@ -147,8 +150,8 @@ const SignUpPage = () => {
           <p>Jeremiah 29:11-13</p>
         </div>
         <div className={styles.blurEffect}></div> */}
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 };
 

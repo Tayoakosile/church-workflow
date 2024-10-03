@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
-    font-family: var(--raleway);
-  }
+  font-family: var(--raleway);
+}
